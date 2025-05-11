@@ -2288,8 +2288,7 @@ namespace MediaTekDocuments.view
             }
 
             DisableDeleteButtons(dgvCommandeLivre);
-            dgvCommandeLivre.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dateCmd.MaxDate = DateTime.Today;
+            dgvCommandeLivre.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;            
         }
 
         /// <summary>
@@ -2304,6 +2303,8 @@ namespace MediaTekDocuments.view
             groupBox3.Enabled = false;
             VideGridView(dgvCommandeLivre);
             VideLivresInfosCmd();
+            dateCmd.Value = DateTime.Today;
+            dateCmd.MaxDate = DateTime.Today;
         }
 
         /// <summary>
@@ -2596,6 +2597,8 @@ namespace MediaTekDocuments.view
             VideGridView(dgvCommandeDvd);
             VideDvdInfosCmd();
             groupBox6.Enabled = false;
+            dateCmdDvd.Value = DateTime.Today;
+            dateCmdDvd.MaxDate = DateTime.Today;
         }
 
         /// <summary>
@@ -2654,8 +2657,7 @@ namespace MediaTekDocuments.view
             }
 
             DisableDeleteButtons(dgvCommandeDvd);
-            dgvCommandeDvd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dateCmdDvd.MaxDate = DateTime.Today;
+            dgvCommandeDvd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;            
         }
 
         /// <summary>
@@ -3005,11 +3007,7 @@ namespace MediaTekDocuments.view
             dgvCommandeRevue.Columns["IdRevue"].Visible = false;
 
 
-            dgvCommandeRevue.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dateCmdRevue.Value = DateTime.Today;
-            dateCmdRevue.MaxDate = DateTime.Today;
-            dateCmdFinAbo.Value = dateCmdFinAbo.Value.AddMonths(1);
-            dateCmdFinAbo.MinDate = DateTime.Today;
+            dgvCommandeRevue.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;            
             DisableDeleteButtonsAbonnement();
         }
 
@@ -3024,6 +3022,10 @@ namespace MediaTekDocuments.view
             VideGridView(dgvCommandeRevue);
             VideRevueInfosCmd();
             groupBox8.Enabled = false;
+            dateCmdRevue.Value = DateTime.Today;
+            dateCmdRevue.MaxDate = DateTime.Today;
+            dateCmdFinAbo.Value = dateCmdFinAbo.Value.AddMonths(1);
+            dateCmdFinAbo.MinDate = DateTime.Today;
         }
 
         /// <summary>

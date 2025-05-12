@@ -739,7 +739,7 @@ namespace MediaTekDocuments.view
             else if (colName == "Supprimer")
             {
                 DialogResult res = MessageBox.Show("Êtes vous sûr de vouloir supprimer " + livreSelectionne.Titre + "?", "Confirmation de suppression", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-                if (res == DialogResult.Yes)
+                if (res == DialogResult.OK)
                 {
                     bool result = controller.DeleteDocument(livreSelectionne.Id, "livre");
                     if (!result)
@@ -1312,7 +1312,7 @@ namespace MediaTekDocuments.view
             else if (colName == "Supprimer")
             {
                 DialogResult res = MessageBox.Show("Êtes vous sûr de vouloir supprimer " + dvdSelectionne.Titre + "?", "Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-                if (res == DialogResult.Yes)
+                if (res == DialogResult.OK)
                 {
                     bool result = controller.DeleteDocument(dvdSelectionne.Id, "dvd");
                     if (!result)
@@ -1677,7 +1677,7 @@ namespace MediaTekDocuments.view
             else if (colName == "Supprimer")
             {
                 DialogResult res = MessageBox.Show("Êtes vous sûr de vouloir supprimer " + revueSelectionne.Titre + "?", "Confirmation de suppression", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-                if (res == DialogResult.Yes)
+                if (res == DialogResult.OK)
                 {
                     bool result = controller.DeleteDocument(revueSelectionne.Id, "revue");
                     if (!result)

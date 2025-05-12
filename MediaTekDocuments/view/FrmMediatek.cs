@@ -1746,9 +1746,11 @@ namespace MediaTekDocuments.view
             else
             {
                 bdgExemplairesListe.DataSource = null;
+                dgvReceptionExemplairesListe.DataSource = null;
                 dgvReceptionExemplairesListe.Rows.Clear();
                 dgvReceptionExemplairesListe.Columns.Clear();
                 pEtatRevue.Enabled = false;
+                dgvReceptionExemplairesListe.Refresh();
             }
         }
 
@@ -1779,6 +1781,7 @@ namespace MediaTekDocuments.view
                     string idRevue = txbReceptionRevueNumero.Text;
                     lesExemplaires = controller.GetExemplaires(idRevue);
                     RemplirReceptionExemplairesListe(lesExemplaires);
+                    
                 }
             }
         }
@@ -2676,7 +2679,11 @@ namespace MediaTekDocuments.view
                 idDvd = txtBoxIdDvdCmd.Text.Trim();
             }
             lesCommandes = controller.GetAllCompleteCommandes(idDvd);
-            if (lesCommandes.Count == 0) return;
+            if (lesCommandes.Count == 0)
+            {                
+                VideGridView(dgvCommandeDvd);
+                return;
+            }
             var commandeRecherche = lesCommandes.Where(c => c.IdLivreDvd == idDvd).ToList();
             remplirDvdCommande(commandeRecherche);
         }
@@ -3074,7 +3081,11 @@ namespace MediaTekDocuments.view
                 idRevue = txtBoxIdRevueCmd.Text.Trim();
             }
             lesAbonnements = controller.GetAllAbonnements(idRevue);
-            if (lesAbonnements.Count == 0) return;
+            if (lesAbonnements.Count == 0)
+            {
+                VideGridView(dgvCommandeRevue);
+                return;
+            }
             var abonnementRecherche = lesAbonnements.Where(c => c.IdRevue == idRevue).ToList();
             remplirRevueCommande(abonnementRecherche);
         }

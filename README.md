@@ -32,8 +32,9 @@ Ce dépôt présente uniquement les **fonctionnalités ajoutées** à l’applic
 - Un onglet **+ Ajouter un document** permet d'ajouter un document de n'importe quel type.
 - Les champs à renseigner changent en fonction du type de document sélectionné.
 
-
-![image](https://github.com/user-attachments/assets/68a63f05-e7d2-4bd9-be41-7af8b854bfbd)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/68a63f05-e7d2-4bd9-be41-7af8b854bfbd">
+</p>
 
 
 - Dans ces onglets, plusieurs fonctionnalités sont disponibles :
@@ -66,7 +67,7 @@ Ce dépôt présente uniquement les **fonctionnalités ajoutées** à l’applic
   - Un **tableau** affichant les commandes associées au document sélectionné.
   - Une zone pour **ajouter une commande**.
   - Un **bouton de suppresion** avec confirmation. <br/>
-    ⚠️ La suppression est bloquée si la commande a atteint l’étape **Livrée** ou **Réglée** </br>
+  ⚠️ La suppression est bloquée si la commande a atteint l’étape **Livrée** ou **Réglée** </br>
     
  
 ![image](https://github.com/user-attachments/assets/40cfc30c-9013-4b3a-98c8-214b6e51df2a)
@@ -76,8 +77,8 @@ Ce dépôt présente uniquement les **fonctionnalités ajoutées** à l’applic
 
 - L'onglet **Commandes Revues** est dédié à la **gestion des abonnements**.
 - Le fonctionnement est similaire aux autres commandes, à la différence que
-  - Le **nombre d'exemplaires** est remplacé par une **date de fin d'abonnement**.
-  - Le **bouton de suppression** est désactivé si un **exemplaire existe dans la période d’abonnement**.
+  - Le **nombre d'exemplaires** est remplacé par une **date de fin d'abonnement**. </br>
+  ⚠️ Le **bouton de suppression** est désactivé si un **exemplaire existe dans la période d’abonnement**.
 
 
 ![image](https://github.com/user-attachments/assets/c3a48d62-56d8-48ee-9e5a-069c9e710e8d)
@@ -95,13 +96,13 @@ Ce dépôt présente uniquement les **fonctionnalités ajoutées** à l’applic
   - **Suppression** d’un exemplaire avec confirmation.
 
 <p align="center">
-  <img src="[URL_DE_L_IMAGE](https://github.com/user-attachments/assets/94389222-5de7-483c-b012-2c7babb06b41)" alt="description" width="300"/>
+  <img src="https://github.com/user-attachments/assets/94389222-5de7-483c-b012-2c7babb06b41"/>
 </p> <br/>
 
 - Si un abonnement se termine dans moins de 30 jours, une alerte est affichée.
 
 <p align="center">
-  <img src="[URL_DE_L_IMAGE](https://github.com/user-attachments/assets/a9fbe2c1-dcef-4667-909b-beaee0a36df0)" alt="description" width="300"/>
+  <img src="https://github.com/user-attachments/assets/a9fbe2c1-dcef-4667-909b-beaee0a36df0"/>
 </p>
 
 ---
@@ -111,13 +112,67 @@ Ce dépôt présente uniquement les **fonctionnalités ajoutées** à l’applic
 - À l’ouverture de l’application, une **fenêtre de connexion** s’affiche et demande un **identifiant** et **un mot de passe**.
 - Une fois connecté, l’utilisateur accède à l’interface principale, dont les fonctionnalités varient selon son **service d’appartenance**. <br/>
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/62ca14df-88b0-4c50-bac7-6899fa23ba0a"/>
+</p>
+
+#### Profils utilisateurs gérés :
+
 | Service            | Droits d’accès                                                           |
 | ------------------ | ------------------------------------------------------------------------ |
-| **Administrateur** | Accès total à toutes les fonctionnalités                                 |
-| **Administratif**  | Accès complet sauf gestion des utilisateurs                              |
+| **Administrateur** | Accès complet à toutes les fonctionnalités                               |
+| **Administratif**  | Accès complet à toutes les fonctionnalités                               |
 | **Prêts**          | Accès en **lecture seule** (pas d’ajout, modification ou suppression)    |
 | **Culture**        | **Accès refusé** — un message d’alerte s’affiche, l’application se ferme |
 
 
+> Les onglets **Commandes** et **+ Ajouter un document** ne sont disponible que pour **l'administrateur** et **l'administratif** uniquement.
 
+---
 
+### Documentation intégrée
+
+Un lien vers la **documentation technique de l’application** est disponible dans le site :
+👉 [Consulter la documentation](https://mediatekformation.alwaysdata.net/mediatekdocuments/documentation/client/html/d75eb659-6335-53f6-af7a-81814a21ab7f.htm)
+
+---
+
+## Installation et utilisation en local
+
+### Prérequis
+
+- .NET Framework ≥ **4.7**.
+- Base de données **MySQL** disponible (locale ou distante). <br/>
+
+> Pour installer l'**API PHP** vous pouvez la trouver en cliquant ici : 👉[API REST PHP](https://github.com/Dirtyrat44/rest_mediatekdocuments)
+> Toutes les informations sont dans le **README** du dépôt.
+
+---
+
+### Installation avec Git (recommandé)
+
+#### 1. Cloner le dépôt
+```bash
+git clone https://github.com/votre-utilisateur/MediaTekDocuments.git
+cd mediatekformation
+```
+#### 2. Ouvrir le projet dans Visual Studio
+- Ouvrir le fichier **.sln**.
+- Vérifier que les dépendances sont bien restaurées.
+
+#### 3. Configurer les identifiants d'accès à l'API
+- Modifier le fichier **App.config**
+```bash
+<appSettings>
+  <add key="ApiUri" value="https://votre-api/rest_mediatekdocuments/" />
+  <add key="ApiLogin" value="votrelogin" />
+  <add key="ApiPassword" value="votremotdepasse" />
+</appSettings>
+```
+#### 4. Compiler et lancer l’application
+- **Démarrer** l'application dans Visual Studio et vérifier que l'application fonctionne.
+
+### Installer l'application (optionnel)
+- Télécharger et lancer le fichier **.msi** dans **Setup-MediaTekDocuments/Release**.
+- Suivre les instructions de l'assistant d'installation.
+- Lancer l'application depuis le **Bureau** ou le **Menu Démarrer**.

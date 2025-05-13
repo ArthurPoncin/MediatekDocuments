@@ -23,10 +23,8 @@ namespace MediaTekDocuments.dal
         /// </summary>
         static Access()
         {
-            var baseDir = AppDomain.CurrentDomain.BaseDirectory;
-            // On remonte jusqu'à MediatekDocuments
-            var projectDir = Path.GetFullPath(Path.Combine(baseDir, "..", ".."));
-            var logDir = Path.Combine(projectDir, "logs");
+            var appName = "MediaTekDocuments";
+            var logDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), appName, "logs");
             Directory.CreateDirectory(logDir);
 
             var logPath = Path.Combine(logDir, "mediatek_access-.log");

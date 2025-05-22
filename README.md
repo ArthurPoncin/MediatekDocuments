@@ -154,7 +154,7 @@ Un lien vers la **documentation technique de l’application** est disponible da
 #### 1. Cloner le dépôt
 ```bash
 git clone https://github.com/votre-utilisateur/MediaTekDocuments.git
-cd mediatekformation
+cd MediaTekDocuments
 ```
 #### 2. Ouvrir le projet dans Visual Studio
 - Ouvrir le fichier **.sln**.
